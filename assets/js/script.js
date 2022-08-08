@@ -11,6 +11,6 @@ var showCurrentDay = function(){
 
 // The current day is shown on the screen as soon as the application starts
 showCurrentDay();
-// The current day will update every 5 seconds in case the user does not close the bowser for days at a time
+// The current day will update every 5 seconds in case the user does not close the browser for days at a time
 setInterval(showCurrentDay, 5000);
 
