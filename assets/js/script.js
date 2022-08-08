@@ -14,3 +14,53 @@ showCurrentDay();
 // The current day will update every 5 seconds in case the user does not close the browser for days at a time
 setInterval(showCurrentDay, 5000);
 
+var containerEl = $(".container");
+var schedule = [{
+    time:"9AM",
+    task:""
+},
+{
+    time:"10AM",
+    task:""
+},
+{
+    time:"11AM",
+    task:""
+},
+{
+    time:"12PM",
+    task:""
+},
+{
+    time:"1PM",
+    task:""
+},
+{
+    time:"2PM",
+    task:""
+},
+{
+    time:"3PM",
+    task:""
+},
+{
+    time:"4PM",
+    task:""
+},
+{
+    time:"5PM",
+    task:""
+}];
+
+
+
+for (var i = 0; i < schedule.length; i++){
+    var backgroundColour = checkHour(schedule[i].time)
+    var taskRow = `<div class="time-block d-flex row">
+                        <div class="hour col-1">${schedule[i].time}</div>
+                        <textarea class="col-10 ${backgroundColour}">${schedule[i].task}</textarea>
+                        <button class="saveBtn col-1"><span class="oi oi-box"><span></button>
+                    </div>
+                    `;
+    containerEl.append(taskRow);
+}
