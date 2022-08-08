@@ -52,7 +52,18 @@ var schedule = [{
     task:""
 }];
 
+var checkHour = function(timeHour){
+    var convertedHour = moment(timeHour, "hA");
+    var timeDifference = Math.floor(moment().diff(convertedHour, "hours", true));
 
+        if(timeDifference > 0){
+            return "past";
+        }else if (timeDifference === 0){
+            return "present";
+        }else{
+            return "future";
+        }
+};
 
 for (var i = 0; i < schedule.length; i++){
     var backgroundColour = checkHour(schedule[i].time)
